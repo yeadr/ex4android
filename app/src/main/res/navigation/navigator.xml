@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigator"
+    app:startDestination="@id/mainfragment">
+
+    <fragment
+        android:id="@+id/mainfragment"
+        android:name="com.example.yussefact4.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/mainfragment">
+
+        <action
+            android:id="@+id/action_home_to_uno"
+            app:destination="@id/fragmentUno" />
+
+        <action
+            android:id="@+id/action_home_to_dos"
+            app:destination="@id/fragmentDos" />
+
+        <action
+            android:id="@+id/action_uno_to_final"
+            app:destination="@id/finalFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentUno"
+        android:name="com.example.yussefact4.FragmentUno"
+        android:label="Estic al 1"
+        tools:layout="@layout/fragmentuno">
+
+        <action
+        android:id="@+id/action_uno_to_final"
+        app:destination="@id/finalFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentDos"
+        android:name="com.example.yussefact4.FragmentDos"
+        android:label="Estic al 2"
+        tools:layout="@layout/fragmentdos" />
+
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.example.yussefact4.FinalFragment"
+        android:label="Final!"
+        tools:layout="@layout/finalfragment">
+
+        <action
+            android:id="@+id/action_final_to_home"
+            app:destination="@id/mainfragment"
+            app:popUpTo="@id/mainfragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+
+</navigation>
